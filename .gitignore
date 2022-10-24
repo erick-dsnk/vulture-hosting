@@ -1,0 +1,11 @@
+*/node_modules
+*/.env
+.vscode
+
+*/**/build
+*/**/dist
+
+*/**/__pycache__
+
+agent/target
+agent/Cargo.lock
