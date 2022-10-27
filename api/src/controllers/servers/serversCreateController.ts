@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import Server from "../../database/models/serverModel";
+import { createServer } from "../../mc";
 
 const serversCreateController = async (req: Request, res: Response) => {
   const server = new Server({
@@ -8,9 +9,12 @@ const serversCreateController = async (req: Request, res: Response) => {
     owner: req.params.owner,
   });
 
-  server.save((error, server) => {
+  server.save((error) => {
     if (error) res.status(500).send({ error });
-    else res.status(200).send({ message: "created server"});  
+    else {
+      const message = createServer(server.name);
+      res.status(200).send({ message });
+    }
   });
 };
 
