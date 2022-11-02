@@ -31,7 +31,7 @@ const verifyToken = async (req: RequestWithUser, res: Response, next: NextFuncti
       }
     );
   } else {
-    req.body.user = undefined;
+    req.user = undefined;
     next();
   }
 };

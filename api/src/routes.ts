@@ -33,7 +33,7 @@ Routes:
 router.get("/servers/:userId", verifyToken, serversListController);
 router.get("/servers/:id", verifyToken, serversByIdController);
 router.post("/servers/create/:id", verifyToken, serversCreateController);
-router.patch("/servers/edit/:id", verifyToken, serversEditController);
+// router.patch("/servers/edit/:id", verifyToken, serversEditController);
 router.delete("/server/delete/:id", verifyToken, serversDeleteController);
 router.put("/servers/start/:id", verifyToken, serversStartController);
 router.put("/servers/stop/:id", verifyToken, serversStopController);
